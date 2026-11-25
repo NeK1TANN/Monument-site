@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оставить заявку — MONUMENT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MONUMENT</a>
+      
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html#catalog">Каталог работ</a>
+        <a href="index.html#services">Услуги и камень</a>
+        <a href="index.html#steps">Этапы заказа</a>
+        <a href="order.html" class="nav-active">Оставить заявку</a>
+      </nav>
+
+      <div class="header-contacts">
+        <div class="phone-block">
+          <a href="tel:+74950000000" class="phone-link">+7 (495) 000-00-00</a>
+          <span class="work-hours">Москва и область · 09:00–20:00</span>
+        </div>
+        <a href="index.html" class="btn btn-outline-light">На главную</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <a href="index.html" class="back-link">← Вернуться в каталог</a>
+        <span class="hero-tag">Бесплатный 3D-эскиз и расчёт сметы</span>
+        <h1 class="page-title">Оформление заявки</h1>
+        <p class="page-subtitle">Укажите пожелания по изделию и удобный способ связи. Специалист свяжется с вами, уточнит детали и подготовит предварительный расчёт — это ни к чему не обязывает.</p>
+      </div>
+    </section>
+
+    <section class="section order-page-section">
+      <div class="container">
+        <div class="order-layout">
+          <div class="order-form-card">
+            <form class="order-form" id="standaloneOrderForm" action="#" method="post">
+              <div class="form-group">
+                <label for="order-subject" class="form-label">Что вас интересует</label>
+                <select id="order-subject" name="subject" class="form-control">
+                  <option value="Общая консультация">Общая консультация и подбор</option>
+                  <option value="Расчёт стоимости и 3D-эскиз">Расчёт стоимости и 3D-эскиз</option>
+                  <option value="Вертикальный памятник">Вертикальный памятник</option>
+                  <option value="Скульптурный портрет">Скульптурный портрет</option>
+                  <option value="Мемориальный комплекс">Мемориальный комплекс</option>
+                  <option value="Надгробие из мрамора">Надгробие из мрамора</option>
+                  <option value="Бронзовая скульптура">Бронзовая скульптура</option>
+                  <option value="Семейный памятник">Семейный памятник</option>
+                  <option value="Благоустройство захоронения">Благоустройство захоронения</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="order-material" class="form-label">Предпочтительный материал</label>
+                <select id="order-material" name="material" class="form-control">
+                  <option value="Не определился">Ещё не определился, нужна помощь</option>
+                  <option value="Габбро-диабаз (чёрный гранит)">Габбро-диабаз (чёрный гранит)</option>
+                  <option value="Дымовский гранит (коричневый)">Дымовский гранит (коричневый)</option>
+                  <option value="Мансуровский гранит (светло-серый)">Мансуровский гранит (светло-серый)</option>
+                  <option value="Мрамор Коелга (белый)">Мрамор Коелга (белый)</option>
+                  <option value="Бронза и гранит">Бронза и гранит</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="order-name" class="form-label">Ваше имя *</label>
+                  <input id="order-name" name="name" type="text" class="form-control" placeholder="Александр" required>
+                </div>
+                <div class="form-group">
+                  <label for="order-phone" class="form-label">Телефон *</label>
+                  <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="+7 (___) ___-__-__" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="order-comment" class="form-label">Комментарий или пожелания (необязательно)</label>
+                <textarea id="order-comment" name="comment" rows="4" class="form-control" placeholder="Например: размеры участка, название кладбища, желаемые сроки установки"></textarea>
+              </div>
+
+              <fieldset class="messenger-choice messenger-choice--light">
+                <legend class="form-label">Как с вами лучше связаться?</legend>
+                <label><input type="radio" name="contact_way" value="phone" checked> Позвонить по телефону</label>
+                <label><input type="radio" name="contact_way" value="whatsapp"> Написать в WhatsApp</label>
+                <label><input type="radio" name="contact_way" value="telegram"> Написать в Telegram</label>
+              </fieldset>
+
+              <button type="submit" class="btn btn-primary btn-full">Отправить заявку на расчёт</button>
+              <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по вашей заявке.</p>
+            </form>
+
+            <div class="order-success" id="orderSuccess" hidden>
+              <span class="section-subtitle">Заявка принята</span>
+              <h2>Спасибо за обращение</h2>
+              <p>Мы получили вашу заявку (<strong id="successSubject"></strong>) и свяжемся с вами выбранным способом в рабочее время с 09:00 до 20:00.</p>
+              <a href="index.html" class="btn btn-outline">Вернуться на главную</a>
+            </div>
+          </div>
+
+          <aside class="order-sidebar">
+            <div class="sidebar-card">
+              <h3>Что будет после отправки</h3>
+              <ul class="sidebar-list">
+                <li><strong>1. Уточнение деталей</strong> — специалист ответит на вопросы по материалам, размерам и правилам конкретного кладбища.</li>
+                <li><strong>2. Бесплатный 3D-эскиз</strong> — подготовим визуализацию будущего памятника с учётом ваших пожеланий.</li>
+                <li><strong>3. Точная смета</strong> — рассчитаем итоговую стоимость изготовления и монтажа без скрытых доплат.</li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card sidebar-card--dark">
+              <h3>Контакты мастерской</h3>
+              <p>Вы можете приехать к нам лично, посмотреть образцы камня и готовые работы в цеху.</p>
+              <ul class="sidebar-contacts">
+                <li><strong>Телефон:</strong> <a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+                <li><strong>Почта:</strong> <a href="mailto:info@monument-stone.ru">info@monument-stone.ru</a></li>
+                <li><strong>Адрес:</strong> г. Москва, ул. Промышленная, д. 12</li>
+                <li><strong>Режим работы:</strong> ежедневно, 09:00–20:00</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo footer-logo">MONUMENT</a>
+          <p class="footer-about">Изготовление памятников, скульптур и мемориальных комплексов из натурального гранита, мрамора и бронзы.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Разделы</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#catalog">Каталог работ</a></li>
+            <li><a href="index.html#services">Услуги и породы камня</a></li>
+            <li><a href="index.html#steps">Этапы заказа</a></li>
+            <li><a href="order.html">Оставить заявку</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+            <li><a href="mailto:info@monument-stone.ru">info@monument-stone.ru</a></li>
+            <li>г. Москва, ул. Промышленная, д. 12</li>
+            <li>Ежедневно с 09:00 до 20:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MONUMENT. Все права защищены.</span>
+        <span>ИНН 7700000000 · ОГРН 1207700000000</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
